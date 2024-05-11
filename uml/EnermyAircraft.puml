@@ -1,0 +1,46 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+abstract class AbstractAircraft
+{
+	# maxHp:int
+    # hp:int
+    + AbstractAircraft(int locationX, int locationY, int speedX, int speedY, int hp)
+    + decreaseHp(int decrease):void
+    + increaseHp(int increase):void
+    + getHp():int
+    + {abstract} shoot():List<BaseBullet>
+ }
+
+ class MobEnemy {
+     + MobEnemy()
+     + forward():void
+     + shoot():List<BaseBullet>
+ }
+ AbstractAircraft <|-- MobEnemy
+
+class EliteEnemy {
+    - shootNum:int
+    - power:int
+    - direction:int
+    + EliteEnemy()
+    + forward():void
+    + shoot():List<BaseBullet>
+}
+AbstractAircraft <|-- EliteEnemy
+
+interface AAFactory {
+    + {abstract} creatAircraft():AbstractAircraft
+}
+AAFactory ..> AbstractAircraft
+
+class EEFactory{
+    + creatAircraft():EliteEnemy
+}
+AAFactory <|.. EEFactory
+
+class MEFactory{
+    + creatAircraft():AbstractAircraft
+}
+AAFactory <|.. MEFactory
+@enduml

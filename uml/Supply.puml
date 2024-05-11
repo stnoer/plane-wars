@@ -1,0 +1,48 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+interface ASFactory {
+    + {abstract} AbstractSupply creatSupply(int locationX, int locationY)
+}
+
+class BSFactory {
+    + AbstractSupply creatSupply(int locationX, int locationY):BombSupply
+}
+ASFactory <|.. BSFactory
+
+class FSFactory{
+    + AbstractSupply creatSupply(int locationX, int locationY):FireSupply
+}
+ASFactory <|.. FSFactory
+
+class HSFactory{
+    + AbstractSupply creatSupply(int locationX,int locationY):HpSupply
+}
+ASFactory <|.. HSFactory
+
+abstract class AbstractSupply{
+    + AbstractSupply(int locationX, int locationY, int speedX, int speedY)
+    + effect(HeroAircraft heroAircraft):void
+}
+ASFactory ..> AbstractSupply
+
+class BombSupply
+{
+    + BombSupply(int locationX, int locationY)
+    + effect(HeroAircraft heroAircraft):void
+}
+AbstractSupply <|-- BombSupply
+
+class FireSupply
+{
+    + FireSupply(int locationX, int locationY)
+    + effect(HeroAircraft heroAircraft):void
+}
+AbstractSupply <|-- FireSupply
+
+class HpSupply
+{
+    + HpSupply(int locationX, int locationY)
+    + effect(HeroAircraft heroAircraft):void
+}
+AbstractSupply <|-- HpSupply
+@enduml

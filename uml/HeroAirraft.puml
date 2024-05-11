@@ -1,0 +1,9 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+class HeroAircraft {
+    - {static} heroAircraft:HeroAircraft
+    - HeroAircraft();
+    + {static} getHeroAircraft():HeroAircraft
+}
+HeroAircraft::heroAircraft --> HeroAircraft
+@enduml

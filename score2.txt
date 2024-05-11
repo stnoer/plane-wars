@@ -1,0 +1,6 @@
+testUserName - Score: 70 - Date: 05-08 15:33:52
+123 - Score: 700 - Date: 05-11 17:16:50
+test - Score: 530 - Date: 05-11 17:17:50
+sssd - Score: 650 - Date: 05-11 17:24:05
+1 - Score: 0 - Date: 05-11 17:24:35
+3 - Score: 30 - Date: 05-11 17:26:04
