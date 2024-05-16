@@ -2,7 +2,7 @@
 'https://plantuml.com/sequence-diagram
 
 interface StrategyShoot {
-    + {interface} List<BaseBullet> shoot(int XAircraft, int YAircraft, int speedXAircraft, int speedYAircraft, int direction,int power,int type):List<BaseBullet> ;
+    + {abstract} shoot(int XAircraft, int YAircraft, int speedXAircraft, int speedYAircraft, int direction,int power,int type):List<BaseBullet> ;
 }
 
 class StraightShoot  {
@@ -21,7 +21,7 @@ class DiffuseShoot  {
 StrategyShoot <|.. DiffuseShoot
 
 class Context {
-    + strategyShoot:StrategyShoot;
+    - strategyShoot:StrategyShoot;
 
     + Context(StrategyShoot strategyShoot);
 
@@ -29,5 +29,5 @@ class Context {
 
     + strategyShoot(int XAircraft, int YAircraft, int speedXAircraft, int speedYAircraft, int direction,int power, int type): List<BaseBullet> ;
 }
-Context *--> StrategyShoot
+Context o--> StrategyShoot
 @enduml

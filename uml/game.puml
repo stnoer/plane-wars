@@ -1,0 +1,68 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+abstract class AbstractGame{
+    #  backGroundTop:int
+    #  executorService:ScheduledExecutorService
+    # timeInterval : int
+    #  heroAircraft:HeroAircraft
+    #   enemyAircrafts:List<AbstractAircraft>
+    #   heroBullets:List<BaseBullet>
+    #   enemyBullets:List<BaseBullet>
+    #   supplies:List<AbstractSupply>
+    #  isPlay:boolean
+    #   enemyMaxNumber:int
+    #  score :int
+    #   formattedDateTime:String
+    #  time:int
+    #   cycleDuration:int
+    #  cycleTime = 0:int
+    #   random = 0.5:double
+    + difficulty:int
+    # gameOverFlag:boolean
+
+    + AbstractGame(int difficulty, boolean isPlay)
+    #  timeCountAndNewCycleJudge():boolean
+    #  shootAction() :void
+    #  aircraftsMoveAction():void
+    #  suppliesMoveAction() :void
+    #  postProcessAction():void
+    #  paintImageWithPositionRevised(Graphics g, List<? extends AbstractFlyingObject> objects) :void
+    #  paintScoreAndLife(Graphics g) :void
+    + {abstract} action ():void
+    + {abstract} crashCheckAction():void
+    + paint(Graphics g) :void
+}
+
+
+class GameDifficult{
+    - BossHp: int
+    + GameDifficult(int difficulty, boolean isPlay) {
+    + action ():void
+    + crashCheckAction():void
+    + paint(Graphics g): void
+}
+
+AbstractGame  <|-- GameDifficult
+
+class GameNolmal{
+    - BossHp: int
+    + GameNolmal(int difficulty, boolean isPlay) {
+    + action ():void
+    + crashCheckAction():void
+    + paint(Graphics g): void
+}
+
+AbstractGame  <|-- GameNolmal
+
+class GameSimple{
+    - BossHp: int
+    + GameSimple(int difficulty, boolean isPlay) {
+    + action ():void
+    + crashCheckAction():void
+    + paint(Graphics g): void
+}
+
+AbstractGame  <|-- GameSimple
+
+@enduml

@@ -57,4 +57,5 @@ public class Boss extends AbstractAircraft{
         return context.strategyShoot(getLocationX(),getLocationY(),getSpeedX(),getSpeedY(),direction,power,0);
     }
 
+
 }

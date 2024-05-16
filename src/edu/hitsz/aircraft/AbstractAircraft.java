@@ -66,9 +66,6 @@ public abstract class AbstractAircraft extends AbstractFlyingObject {
         return direction;
     }
 
-    public int getShootNum() {
-        return shootNum;
-    }
 
     public int getPower() {
         return power;
@@ -82,6 +79,10 @@ public abstract class AbstractAircraft extends AbstractFlyingObject {
      */
     public abstract List<BaseBullet> shoot();
 
+    public void setMaxHP(int num)
+    {
+        maxHp=num;
+    }
 }
 
 

@@ -7,7 +7,7 @@ import edu.hitsz.bullet.BaseBullet;
 import java.util.List;
 
 public class Context {
-    public StrategyShoot strategyShoot;
+     private StrategyShoot strategyShoot;
 
     public Context(StrategyShoot strategyShoot){
         this.strategyShoot=strategyShoot;

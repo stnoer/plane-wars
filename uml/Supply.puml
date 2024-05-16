@@ -19,9 +19,14 @@ class HSFactory{
 }
 ASFactory <|.. HSFactory
 
+class FPSFactory{
+    + AbstractSupply creatSupply(int locationX, int locationY):FireSupply
+}
+ASFactory <|.. FPSFactory
+
 abstract class AbstractSupply{
     + AbstractSupply(int locationX, int locationY, int speedX, int speedY)
-    + effect(HeroAircraft heroAircraft):void
+    + {abstract} effect(HeroAircraft heroAircraft):void
 }
 ASFactory ..> AbstractSupply
 
@@ -45,4 +50,12 @@ class HpSupply
     + effect(HeroAircraft heroAircraft):void
 }
 AbstractSupply <|-- HpSupply
+
+class FirePlusSupply
+{
+    + FirePlusSupply(int locationX, int locationY, int speedX, int speedY)
+    + effect(HeroAircraft heroAircraft):void
+}
+
+AbstractSupply <|-- FirePlusSupply
 @enduml

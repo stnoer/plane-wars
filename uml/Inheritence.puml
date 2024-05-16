@@ -27,13 +27,19 @@ abstract class AbstractFlyingObject
 }
 abstract class AbstractAircraft
 {
-	# maxHp:int
-    # hp:int
-    + AbstractAircraft(int locationX, int locationY, int speedX, int speedY, int hp)
-    + decreaseHp(int decrease):void
-    + increaseHp(int increase):void
-    + getHp():int
-    + {abstract} shoot():List<BaseBullet>
+	- shootNum:int
+        - power:int
+        - direction:int
+    	# maxHp:int
+        # hp:int
+        + AbstractAircraft(int locationX, int locationY, int speedX, int speedY, int hp)
+        + decreaseHp(int decrease):void
+        + increaseHp(int increase):void
+        + getDirection():int
+        + getPower():int
+        + setMaxHP(int num):void
+        + getHp():int
+        + {abstract} shoot():List<BaseBullet>
  }
 
 
@@ -41,15 +47,18 @@ class HeroAircraft {
     - shootNum:int
     - power:int
     - direction:int
+    - {static} heroAircraft :HeroAircraft
     + HeroAircraft(int locationX, int locationY, int speedX, int speedY, int hp)
     + forward():void
+    + {static}getHeroAircraft:HeroAircraft
     + shoot():List<BaseBullet>
+    + changeShootType(int supplyShootType):void
 }
 
 AbstractAircraft <|-- HeroAircraft
 
 class MobEnemy {
-    + MobEnemy(int locationX, int locationY, int speedX, int speedY, int hp)
+    + MobEnemy()
     + forward():void
     + shoot():List<BaseBullet>
 }
@@ -59,11 +68,32 @@ class EliteEnemy {
     - shootNum:int
     - power:int
     - direction:int
-    + EliteEnemy(int locationX, int locationY, int speedX, int speedY, int hp)
+    + EliteEnemy()
     + forward():void
     + shoot():List<BaseBullet>
 }
 AbstractAircraft <|-- EliteEnemy
+
+class ElitePlus {
+    - shootNum:int
+    - power:int
+    - direction:int
+    + ElitePlus()
+    + forward():void
+    + shoot():List<BaseBullet>
+}
+AbstractAircraft <|-- ElitePlus
+
+class Boss {
+    - shootNum:int
+    - power:int
+    - direction:int
+    + Boss()
+    + forward():void
+    + getPower():int
+    + shoot():List<BaseBullet>
+}
+AbstractAircraft <|-- Boss
 
 abstract class BaseBullet
 {
@@ -100,7 +130,11 @@ AbstractFlyingObject <|-- AbstractSupply
 
 class BombSupply
 {
+    - {final} bombObserverlist:List<Observer>
     + BombSupply(int locationX, int locationY, int speedX, int speedY)
+    + addObserver(Observer observer):void
+    + removeObserver(Observer observer):void
+    + notifyAllObserver():void
     + effect(HeroAircraft heroAircraft):void
 }
 
@@ -113,6 +147,15 @@ class FireSupply
 }
 
 AbstractSupply <|-- FireSupply
+
+class FirePlusSupply
+{
+    + FirePlusSupply(int locationX, int locationY, int speedX, int speedY)
+    + effect(HeroAircraft heroAircraft):void
+}
+
+AbstractSupply <|-- FirePlusSupply
+
 
 class HpSupply
 {

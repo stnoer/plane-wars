@@ -2,18 +2,17 @@
 'https://plantuml.com/sequence-diagram
 
 interface DAO {
-    + getData(List<String> leaderboard):void;
     + {static} addData(String username, int score, String date) :void
     + {static} readData(List<String> leaderboard):void;
     + {static} deleteData() :void;
 }
 
 class ScoreDAO {
-    + getData(List<String> leaderboard):void;
     + {static} addData(String username, int score, String date) :void
     + {static} readData(List<String> leaderboard):void;
     + {static} deleteData() :void;
     + {static} sortData(List<String> leaderboard):void;
+    + {static} getBufferedWriter(List<String> leaderboard, int difficulty):BufferedWriter
 }
 DAO <|.. ScoreDAO
 @enduml

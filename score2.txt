@@ -1,6 +1,7 @@
-testUserName - Score: 70 - Date: 05-08 15:33:52
 123 - Score: 700 - Date: 05-11 17:16:50
-test - Score: 530 - Date: 05-11 17:17:50
+ssd - Score: 690 - Date: 05-14 20:29:45
 sssd - Score: 650 - Date: 05-11 17:24:05
-1 - Score: 0 - Date: 05-11 17:24:35
+test3 - Score: 450 - Date: 05-16 20:27:39
+testUserName - Score: 70 - Date: 05-08 15:33:52
 3 - Score: 30 - Date: 05-11 17:26:04
+特色t - Score: 550 - Date: 05-16 20:35:49

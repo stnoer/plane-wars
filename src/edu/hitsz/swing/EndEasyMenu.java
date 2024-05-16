@@ -33,7 +33,7 @@ public class EndEasyMenu {
             easyText.setText("难度：NOLMAL");
         }
         else{
-            easyText.setText("难度：DIFFICULTY");
+            easyText.setText("难度：DIFFICULT");
         }
         // 存读写新的记录信息
         name = JOptionPane.showInputDialog("请输入你的玩家名");

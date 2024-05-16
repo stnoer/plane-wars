@@ -1,0 +1,10 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class HeroAircraft {
+    - {static} heroAircraft :HeroAircraft
+    - HeroAircraft(int locationX, int locationY, int speedX, int speedY, int hp)
+    + {static}getHeroAircraft():HeroAircraft
+}
+HeroAircraft -->HeroAircraft
+@enduml

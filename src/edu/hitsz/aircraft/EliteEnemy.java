@@ -21,11 +21,6 @@ import java.util.List;
 public class EliteEnemy extends AbstractAircraft {
 
     /**
-     * 子弹一次发射数量
-     */
-    private int shootNum = 1;
-
-    /**
      * 子弹伤害
      */
     private int power = 30;

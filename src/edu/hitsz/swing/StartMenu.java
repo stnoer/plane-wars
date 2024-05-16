@@ -1,7 +1,6 @@
 package edu.hitsz.swing;
 
-import edu.hitsz.application.Game;
-import edu.hitsz.application.Main;
+import edu.hitsz.application.*;
 
 
 import javax.swing.*;
@@ -25,7 +24,7 @@ public class StartMenu {
         simpleBtton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Game game = new Game(0,isPlay);
+                AbstractGame game = new GameSimple(0,isPlay);
                 Main.cardPanel.add(game);
                 Main.cardLayout.last(Main.cardPanel);
                 game.action();
@@ -35,7 +34,7 @@ public class StartMenu {
         nolmalButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Game game = new Game(1,isPlay);
+                AbstractGame game = new GameNolmal(1,isPlay);
                 Main.cardPanel.add(game);
                 Main.cardLayout.last(Main.cardPanel);
                 game.action();
@@ -44,7 +43,7 @@ public class StartMenu {
         difficultButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Game game = new Game(2,isPlay);
+                AbstractGame game = new GameDifficult(2,isPlay);
                 Main.cardPanel.add(game);
                 Main.cardLayout.last(Main.cardPanel);
                 game.action();

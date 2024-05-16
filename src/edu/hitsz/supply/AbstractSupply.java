@@ -13,7 +13,5 @@ public abstract class AbstractSupply extends AbstractFlyingObject {
     public AbstractSupply(int locationX, int locationY, int speedX, int speedY) {
         super(locationX, locationY, speedX, speedY);
     }
-    public void effect(HeroAircraft heroAircraft){
-        ;
-    }
+    public abstract void effect(HeroAircraft heroAircraft);
 }
